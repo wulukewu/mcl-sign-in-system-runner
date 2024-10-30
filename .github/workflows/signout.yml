@@ -1,0 +1,32 @@
+name: noip-renewer
+
+on:
+  schedule:
+    # UTC+8 9~17 -> UTC+0 1~9, run every day.
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-signin:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v2
+
+    - name: Docker Sign Out
+      run: |
+        docker pull wuchunchen/mcl-sign-in-system:latest
+      
+        username="${{ secrets.username }}"
+        password="${{ secrets.password }}"
+        otpauth="${{ secrets.otpauth }}"
+        
+        docker run\
+          -inorout signout \
+          -username "$username" \
+          -password "$password" \
+          -otpauth "$otpauth" \
+          wuchunchen/mcl-sign-in-system:latest
