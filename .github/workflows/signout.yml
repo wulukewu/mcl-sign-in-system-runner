@@ -24,9 +24,8 @@ jobs:
         password="${{ secrets.password }}"
         otpauth="${{ secrets.otpauth }}"
         
-        docker run\
+        docker run wuchunchen/mcl-sign-in-system:latest\
           --inorout signout \
           --username "$username" \
           --password "$password" \
           --otpauth "$otpauth" \
-          wuchunchen/mcl-sign-in-system:latest
