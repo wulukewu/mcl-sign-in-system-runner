@@ -1,4 +1,4 @@
-name: noip-renewer
+name: Sign In
 
 on:
   schedule:
