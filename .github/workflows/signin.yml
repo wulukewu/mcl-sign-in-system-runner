@@ -16,10 +16,11 @@ jobs:
     - name: Set up Docker
       uses: docker/setup-buildx-action@v2
 
+    - name: Docker Pull
+      run: docker pull wulukewu/mcl-sign-in-system:latest
+
     - name: Docker Sign In
       run: |
-        docker pull wulukewu/mcl-sign-in-system:latest
-      
         username="${{ secrets.username }}"
         password="${{ secrets.password }}"
         otpauth="${{ secrets.otpauth }}"
