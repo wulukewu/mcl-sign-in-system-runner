@@ -7,7 +7,7 @@ This Dockerized application automates the sign-in/sign-out process for MCL. You 
 Run the container with the following command:
 
 ```bash
-docker run wuchunchen/mcl-sign-in-system:latest --inorout [signin/signout] --username [your_student_id] --password [your_password] --otpauth [otpauth_url]
+docker run wulukewu/mcl-sign-in-system:latest --inorout [signin/signout] --username [your_student_id] --password [your_password] --otpauth [otpauth_url]
 ```
 
 ### Parameters
