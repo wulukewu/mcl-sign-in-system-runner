@@ -1,6 +1,6 @@
 ﻿# MCL Automatic Sign-In System - GitHub Runner
 
-This Dockerized application automates the sign-in/sign-out process for MCL. You can securely provide your credentials at runtime without storing them in the Docker image.
+A runner that automates the sign-in/sign-out process for NCU HumanSys. You can securely provide your credentials at runtime without storing them in the Docker image.
 
 ## Hub
 
