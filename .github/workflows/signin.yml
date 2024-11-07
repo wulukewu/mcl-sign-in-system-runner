@@ -2,8 +2,8 @@ name: Sign In
 
 on:
   schedule:
-    # UTC+8 9~17 -> UTC+0 1~9, run every day.
-    - cron: "0 1 * * *"
+    # UTC+8 9~17 -> UTC+0 1~9, run every weekday.
+    - cron: "0 1 * * 1-5"
   workflow_dispatch:
 
 jobs:
