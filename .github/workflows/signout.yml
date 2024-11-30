@@ -1,9 +1,9 @@
-name: Sign Out
+name: Sign Out - Dev
 
 on:
-  schedule:
-    # UTC+8 9~17 -> UTC+0 1~9, run every weekday.
-    - cron: "10 9 * * 1-5"
+  # schedule:
+  #   # UTC+8 9~17 -> UTC+0 1~9, run every weekday.
+  #   - cron: "10 9 * * 1-5"
   workflow_dispatch:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Docker Pull
-      run: docker pull wulukewu/mcl-sign-in-system:latest
+      run: docker pull wulukewu/mcl-sign-in-system:dev
 
     - name: Docker Sign Out
       run: |      
@@ -25,7 +25,7 @@ jobs:
         password="${{ secrets.password }}"
         otpauth="${{ secrets.otpauth }}"
         
-        docker run wulukewu/mcl-sign-in-system:latest\
+        docker run wulukewu/mcl-sign-in-system:dev\
           --inorout signout \
           --username "$username" \
           --password "$password" \
